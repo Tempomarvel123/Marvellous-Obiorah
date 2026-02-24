@@ -93,7 +93,7 @@ export default function UploadMaterial() {
               <input
                 type="text"
                 required
-                className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all"
                 placeholder="e.g. Introduction to Algorithms Lecture Notes"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
@@ -104,7 +104,7 @@ export default function UploadMaterial() {
               <label className="block text-sm font-medium text-zinc-700 mb-1">Course</label>
               <select
                 required
-                className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all"
                 value={formData.course_id}
                 onChange={(e) => setFormData({ ...formData, course_id: e.target.value })}
               >
@@ -119,11 +119,11 @@ export default function UploadMaterial() {
 
             <div>
               <label className="block text-sm font-medium text-zinc-700 mb-1">File (PDF, DOCX, PPTX - Max 20MB)</label>
-              <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-zinc-300 border-dashed rounded-xl hover:border-indigo-500 transition-colors cursor-pointer relative">
+              <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-zinc-300 border-dashed rounded-xl hover:border-brand transition-colors cursor-pointer relative">
                 <div className="space-y-1 text-center">
                   <Upload className="mx-auto h-12 w-12 text-zinc-400" />
                   <div className="flex text-sm text-zinc-600">
-                    <span className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">
+                    <span className="relative cursor-pointer bg-white rounded-md font-bold text-black hover:text-brand">
                       {formData.file ? formData.file.name : 'Click to upload a file'}
                     </span>
                   </div>
@@ -142,7 +142,7 @@ export default function UploadMaterial() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex justify-center items-center py-4 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all disabled:opacity-50"
+            className="w-full flex justify-center items-center py-4 px-4 border border-transparent text-sm font-black rounded-xl text-black bg-brand hover:bg-black hover:text-brand focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand transition-all disabled:opacity-50 uppercase tracking-widest"
           >
             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Upload Material'}
           </button>

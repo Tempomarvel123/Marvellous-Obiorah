@@ -74,7 +74,7 @@ export default function AdminPanel() {
         </div>
         <button
           onClick={() => setShowCreateCourse(!showCreateCourse)}
-          className="flex items-center space-x-2 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors"
+          className="flex items-center space-x-2 px-4 py-2 bg-brand text-black font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-black hover:text-brand transition-all"
         >
           <BookPlus className="w-5 h-5" />
           <span>{showCreateCourse ? 'View Users' : 'Create Course'}</span>
@@ -102,7 +102,7 @@ export default function AdminPanel() {
                   type="text"
                   required
                   placeholder="CSC 101"
-                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-brand outline-none"
                   value={courseData.course_code}
                   onChange={(e) => setCourseData({ ...courseData, course_code: e.target.value })}
                 />
@@ -111,7 +111,7 @@ export default function AdminPanel() {
                 <label className="block text-sm font-medium text-zinc-700 mb-1">Lecturer</label>
                 <select
                   required
-                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-brand outline-none"
                   value={courseData.lecturer_id}
                   onChange={(e) => setCourseData({ ...courseData, lecturer_id: e.target.value })}
                 >
@@ -128,7 +128,7 @@ export default function AdminPanel() {
                 type="text"
                 required
                 placeholder="Introduction to Computer Science"
-                className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-brand outline-none"
                 value={courseData.course_title}
                 onChange={(e) => setCourseData({ ...courseData, course_title: e.target.value })}
               />
@@ -137,7 +137,7 @@ export default function AdminPanel() {
               <div>
                 <label className="block text-sm font-medium text-zinc-700 mb-1">Level</label>
                 <select
-                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-brand outline-none"
                   value={courseData.level}
                   onChange={(e) => setCourseData({ ...courseData, level: e.target.value })}
                 >
@@ -151,7 +151,7 @@ export default function AdminPanel() {
               <div>
                 <label className="block text-sm font-medium text-zinc-700 mb-1">Semester</label>
                 <select
-                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                  className="w-full px-4 py-2 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-brand outline-none"
                   value={courseData.semester}
                   onChange={(e) => setCourseData({ ...courseData, semester: e.target.value })}
                 >
@@ -162,7 +162,7 @@ export default function AdminPanel() {
             </div>
             <button
               type="submit"
-              className="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors"
+              className="w-full py-3 bg-brand text-black font-black uppercase tracking-widest rounded-xl hover:bg-black hover:text-brand transition-all"
             >
               Create Course
             </button>

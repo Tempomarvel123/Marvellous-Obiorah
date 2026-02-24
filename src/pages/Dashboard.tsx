@@ -55,7 +55,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <div className="p-3 bg-indigo-50 rounded-xl text-indigo-600">
+              <div className="p-3 bg-brand/10 rounded-xl text-black">
                 <Users className="w-6 h-6" />
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Dashboard() {
           </div>
           <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <div className="p-3 bg-emerald-50 rounded-xl text-emerald-600">
+              <div className="p-3 bg-brand/10 rounded-xl text-black">
                 <BookOpen className="w-6 h-6" />
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function Dashboard() {
           </div>
           <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <div className="p-3 bg-amber-50 rounded-xl text-amber-600">
+              <div className="p-3 bg-brand/10 rounded-xl text-black">
                 <FileText className="w-6 h-6" />
               </div>
             </div>
@@ -94,11 +94,11 @@ export default function Dashboard() {
               >
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-white rounded-lg shadow-sm">
-                    <PlusCircle className="w-5 h-5 text-indigo-600" />
+                    <PlusCircle className="w-5 h-5 text-brand" />
                   </div>
                   <span className="font-medium text-zinc-900">Upload New Material</span>
                 </div>
-                <ArrowRight className="w-5 h-5 text-zinc-400 group-hover:text-indigo-600 transition-colors" />
+                <ArrowRight className="w-5 h-5 text-zinc-400 group-hover:text-brand transition-colors" />
               </Link>
             )}
             <Link
@@ -107,28 +107,28 @@ export default function Dashboard() {
             >
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white rounded-lg shadow-sm">
-                  <Search className="w-5 h-5 text-indigo-600" />
+                  <Search className="w-5 h-5 text-brand" />
                 </div>
                 <span className="font-medium text-zinc-900">Browse Materials</span>
               </div>
-              <ArrowRight className="w-5 h-5 text-zinc-400 group-hover:text-indigo-600 transition-colors" />
+              <ArrowRight className="w-5 h-5 text-zinc-400 group-hover:text-brand transition-colors" />
             </Link>
           </div>
         </div>
 
-        <div className="bg-indigo-600 p-8 rounded-2xl shadow-lg text-white relative overflow-hidden">
+        <div className="bg-black p-8 rounded-2xl shadow-lg text-white relative overflow-hidden border-2 border-brand">
           <div className="relative z-10">
             <h2 className="text-2xl font-bold mb-2">Secure Academic Storage</h2>
-            <p className="text-indigo-100 mb-6">
+            <p className="text-zinc-400 mb-6">
               All materials are protected and accessible only to authorized students and staff.
             </p>
             <div className="flex space-x-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">PDF Support</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">DOCX Support</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">PPTX Support</span>
+              <span className="px-3 py-1 bg-brand text-black rounded-full text-xs font-bold uppercase tracking-wider">PDF Support</span>
+              <span className="px-3 py-1 bg-brand text-black rounded-full text-xs font-bold uppercase tracking-wider">DOCX Support</span>
+              <span className="px-3 py-1 bg-brand text-black rounded-full text-xs font-bold uppercase tracking-wider">PPTX Support</span>
             </div>
           </div>
-          <Shield className="absolute -right-8 -bottom-8 w-48 h-48 text-white/10" />
+          <Shield className="absolute -right-8 -bottom-8 w-48 h-48 text-brand/10" />
         </div>
       </div>
     </div>

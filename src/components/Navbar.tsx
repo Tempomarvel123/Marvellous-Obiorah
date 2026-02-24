@@ -18,34 +18,34 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <Shield className="w-8 h-8 text-indigo-600" />
-              <span className="text-xl font-bold text-zinc-900 tracking-tight">SecureVault</span>
+            <Link to="/dashboard" className="flex items-center space-x-2">
+              <Shield className="w-8 h-8 text-brand" />
+              <span className="text-xl font-black text-zinc-900 tracking-tighter uppercase">SecureVault</span>
             </Link>
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-center space-x-1 text-zinc-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
+            <Link to="/dashboard" className="flex items-center space-x-1 text-zinc-600 hover:text-black hover:bg-brand/10 px-3 py-2 rounded-lg text-sm font-bold uppercase tracking-tight transition-all">
               <LayoutDashboard className="w-4 h-4" />
               <span>Dashboard</span>
             </Link>
 
             {user.role === 'admin' && (
-              <Link to="/admin" className="flex items-center space-x-1 text-zinc-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/admin" className="flex items-center space-x-1 text-zinc-600 hover:text-black hover:bg-brand/10 px-3 py-2 rounded-lg text-sm font-bold uppercase tracking-tight transition-all">
                 <Shield className="w-4 h-4" />
                 <span>Admin</span>
               </Link>
             )}
 
             {user.role === 'lecturer' && (
-              <Link to="/upload" className="flex items-center space-x-1 text-zinc-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/upload" className="flex items-center space-x-1 text-zinc-600 hover:text-black hover:bg-brand/10 px-3 py-2 rounded-lg text-sm font-bold uppercase tracking-tight transition-all">
                 <Upload className="w-4 h-4" />
                 <span>Upload</span>
               </Link>
             )}
 
             {user.role === 'student' && (
-              <Link to="/materials" className="flex items-center space-x-1 text-zinc-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/materials" className="flex items-center space-x-1 text-zinc-600 hover:text-black hover:bg-brand/10 px-3 py-2 rounded-lg text-sm font-bold uppercase tracking-tight transition-all">
                 <Search className="w-4 h-4" />
                 <span>Materials</span>
               </Link>

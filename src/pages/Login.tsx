@@ -26,7 +26,7 @@ export default function Login() {
       const data = await res.json();
       if (res.ok) {
         login(data.token, data.user);
-        navigate('/');
+        navigate('/dashboard');
       } else {
         setError(data.message || 'Login failed');
       }
@@ -42,7 +42,7 @@ export default function Login() {
       <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-2xl shadow-sm border border-zinc-200">
         <div>
           <div className="flex justify-center">
-            <Shield className="h-12 w-12 text-indigo-600" />
+            <Shield className="h-12 w-12 text-brand" />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-zinc-900 tracking-tight">
             Secure Course Vault
@@ -67,7 +67,7 @@ export default function Login() {
                 <input
                   type="email"
                   required
-                  className="appearance-none relative block w-full px-3 py-3 pl-10 border border-zinc-300 placeholder-zinc-500 text-zinc-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-3 pl-10 border border-zinc-300 placeholder-zinc-500 text-zinc-900 rounded-lg focus:outline-none focus:ring-brand focus:border-brand focus:z-10 sm:text-sm"
                   placeholder="admin@vault.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -83,7 +83,7 @@ export default function Login() {
                 <input
                   type="password"
                   required
-                  className="appearance-none relative block w-full px-3 py-3 pl-10 border border-zinc-300 placeholder-zinc-500 text-zinc-900 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-3 pl-10 border border-zinc-300 placeholder-zinc-500 text-zinc-900 rounded-lg focus:outline-none focus:ring-brand focus:border-brand focus:z-10 sm:text-sm"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -96,7 +96,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all disabled:opacity-50"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-black bg-brand hover:bg-black hover:text-brand focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand transition-all disabled:opacity-50 uppercase tracking-widest"
             >
               {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Sign in'}
             </button>
@@ -105,7 +105,7 @@ export default function Login() {
           <div className="text-center">
             <p className="text-sm text-zinc-600">
               Don't have an account?{' '}
-              <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+              <Link to="/register" className="font-bold text-black hover:text-brand transition-colors underline underline-offset-4">
                 Register here
               </Link>
             </p>

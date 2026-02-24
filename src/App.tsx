@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -19,32 +20,35 @@ export default function App() {
     <AuthProvider>
       <Router>
         <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900">
-          <Navbar />
-          <main>
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-              {/* Protected Routes */}
-              <Route element={<ProtectedRoute />}>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/materials" element={<MaterialsList />} />
-              </Route>
-
-              {/* Role Specific Routes */}
-              <Route element={<ProtectedRoute allowedRoles={['lecturer']} />}>
-                <Route path="/upload" element={<UploadMaterial />} />
-              </Route>
-
-              <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
-                <Route path="/admin" element={<AdminPanel />} />
-              </Route>
-
-              {/* Fallback */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
+            {/* Protected Routes with Navbar */}
+            <Route element={<ProtectedRoute />}>
+              <Route
+                path="/*"
+                element={
+                  <>
+                    <Navbar />
+                    <Routes>
+                      <Route path="dashboard" element={<Dashboard />} />
+                      <Route path="materials" element={<MaterialsList />} />
+                      <Route element={<ProtectedRoute allowedRoles={['lecturer']} />}>
+                        <Route path="upload" element={<UploadMaterial />} />
+                      </Route>
+                      <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+                        <Route path="admin" element={<AdminPanel />} />
+                      </Route>
+                      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                    </Routes>
+                  </>
+                }
+              />
+            </Route>
+          </Routes>
         </div>
       </Router>
     </AuthProvider>

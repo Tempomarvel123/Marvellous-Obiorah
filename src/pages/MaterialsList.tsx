@@ -70,7 +70,7 @@ export default function MaterialsList() {
             <input
               type="text"
               placeholder="Search by course code..."
-              className="pl-10 pr-4 py-2 bg-white border border-zinc-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-64"
+              className="pl-10 pr-4 py-2 bg-white border border-zinc-200 rounded-xl focus:ring-2 focus:ring-brand outline-none w-full sm:w-64"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && fetchMaterials()}
@@ -78,7 +78,7 @@ export default function MaterialsList() {
           </div>
           <button
             onClick={fetchMaterials}
-            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors"
+            className="px-4 py-2 bg-brand text-black font-bold uppercase tracking-widest text-sm rounded-xl hover:bg-black hover:text-brand transition-all"
           >
             Search
           </button>
@@ -121,7 +121,7 @@ export default function MaterialsList() {
               </div>
               <button
                 onClick={fetchMaterials}
-                className="w-full py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors text-sm"
+                className="w-full py-2 border-2 border-brand text-black font-bold uppercase tracking-widest text-xs rounded-lg hover:bg-brand transition-all"
               >
                 Apply Filters
               </button>
@@ -132,19 +132,19 @@ export default function MaterialsList() {
         <div className="lg:col-span-3">
           {loading ? (
             <div className="flex justify-center p-12">
-              <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
+              <Loader2 className="w-8 h-8 text-brand animate-spin" />
             </div>
           ) : materials.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {materials.map((material) => (
-                <div key={material.id} className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:border-indigo-300 transition-all group">
+                <div key={material.id} className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:border-brand transition-all group">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 bg-zinc-50 rounded-xl text-zinc-600 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                    <div className="p-3 bg-zinc-50 rounded-xl text-zinc-600 group-hover:bg-brand/10 group-hover:text-black transition-colors">
                       <FileText className="w-6 h-6" />
                     </div>
                     <button
                       onClick={() => handleDownload(material.file_path, material.title)}
-                      className="p-2 text-zinc-400 hover:text-indigo-600 transition-colors"
+                      className="p-2 text-zinc-400 hover:text-brand transition-colors"
                       title="Download"
                     >
                       <Download className="w-5 h-5" />
