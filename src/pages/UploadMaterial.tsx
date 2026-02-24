@@ -81,7 +81,7 @@ export default function UploadMaterial() {
           )}
 
           {success && (
-            <div className="flex items-center space-x-2 bg-emerald-50 border border-emerald-200 text-emerald-600 p-4 rounded-xl text-sm">
+            <div className="flex items-center space-x-2 bg-brand text-black border-2 border-black p-4 rounded-xl text-sm font-bold uppercase tracking-tight">
               <CheckCircle2 className="w-5 h-5" />
               <span>Material uploaded successfully! Redirecting...</span>
             </div>
